@@ -39,22 +39,13 @@ class CommunitiesPage extends StatelessWidget {
         ),
         body: ListView.builder(
             itemCount: 20, //TODO : Add chat
-            itemBuilder: ((context, index) => Column(
-                  children: [
-                    ListTile(
-                      leading: CircleAvatar(),
-                      title: Text("name"),
-                    ),
-                    Container(
-                      height: 300,
-                      child: const ListTile(
-                        leading: CircleAvatar(),
-                        title: Text("name"),
-                        subtitle: Text("chat text"),
-                        trailing: Text("time"),
-                      ),
-                    ),
-                  ],
+            itemBuilder: ((context, index) => Container(
+                  child: const ListTile(
+                    leading: CircleAvatar(),
+                    title: Text("name"),
+                    subtitle: Text("chat text"),
+                    trailing: Text("time"),
+                  ),
                 ))));
   }
 }

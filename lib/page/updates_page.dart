@@ -52,8 +52,48 @@ class UpdatesPage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "status",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.add))
+            ],
+          ),
           Container(
-            height: 300,
+            height: 120,
+            color: Colors.white,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  return const StatusList();
+                }),
+          ),
+          Divider(),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Channels",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.add),
+              )
+            ],
+          ),
+          Expanded(
+            // height: 300,
             child: ListView.builder(
                 itemCount: 8,
                 itemBuilder: (context, index) {
@@ -65,17 +105,3 @@ class UpdatesPage extends StatelessWidget {
     );
   }
 }
-
-            // Row(
-            //   children: [
-            //     Container(
-            //       height: 300,
-            //       child: ListView.builder(
-            //           itemCount: 8,
-            //           scrollDirection: Axis.horizontal,
-            //           itemBuilder: (context, index) {
-            //             return const StatusList();
-            //           }),
-            //     ),
-            //   ],
-            // ),

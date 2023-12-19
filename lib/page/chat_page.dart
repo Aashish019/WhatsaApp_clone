@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:whatsapp_clone/page/individual_pages.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -48,11 +50,26 @@ class ChatPage extends StatelessWidget {
         ),
         body: ListView.builder(
             itemCount: 20, //TODO : Add chat
-            itemBuilder: ((context, index) => const ListTile(
-                  leading: CircleAvatar(),
-                  title: Text("name"),
-                  subtitle: Text("chat text"),
-                  trailing: Text("time"),
+            itemBuilder: ((context, index) => InkWell(
+                  onTap: () => Get.to(() => const individualPage()),
+                  child: const ListTile(
+                    tileColor: Colors.white,
+                    leading: CircleAvatar(),
+                    title: Text(
+                      "name",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Row(
+                      children: [
+                        Icon(
+                          Icons.done_all,
+                          size: 18,
+                        ),
+                        Text("chat text"),
+                      ],
+                    ),
+                    trailing: Text("00;00"),
+                  ),
                 ))));
   }
 }

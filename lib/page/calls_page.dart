@@ -46,11 +46,23 @@ class CallsPage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                   itemCount: 20, //TODO : Add chat
-                  itemBuilder: ((context, index) => const ListTile(
-                        leading: CircleAvatar(),
-                        title: Text("name"),
-                        subtitle: Text("date month, time"),
-                        trailing: Icon(Icons.videocam_outlined),
+                  itemBuilder: ((context, index) => InkWell(
+                        onTap: () {},
+                        child: const ListTile(
+                          tileColor: Colors.white,
+                          leading: CircleAvatar(),
+                          title: Text("name"),
+                          subtitle: Row(
+                            children: [
+                              Icon(
+                                Icons.arrow_outward_sharp,
+                                size: 18,
+                              ),
+                              Text("date month, time"),
+                            ],
+                          ),
+                          trailing: Icon(Icons.videocam_outlined),
+                        ),
                       ))),
             ),
           ],

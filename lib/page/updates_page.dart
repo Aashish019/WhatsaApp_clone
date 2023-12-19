@@ -72,7 +72,10 @@ class UpdatesPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 8,
                 itemBuilder: (context, index) {
-                  return const StatusList();
+                  return InkWell(
+                    onTap: () {},
+                    child: const StatusList(),
+                  );
                 }),
           ),
           Divider(),
@@ -97,7 +100,10 @@ class UpdatesPage extends StatelessWidget {
             child: ListView.builder(
                 itemCount: 8,
                 itemBuilder: (context, index) {
-                  return const MyChannels();
+                  return InkWell(
+                    onTap: () {},
+                    child: const MyChannels(),
+                  );
                 }),
           ),
         ],
